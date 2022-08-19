@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
 import Loader from "./Loader";
+import millify from "millify";
 
 
 const { Title } = Typography;
@@ -34,17 +35,17 @@ const Homepage = () => {
         <Col span={12}>
           <Statistic
             title="Total Market Cap:"
-            value={globalStats.totalMarketCap}
+            value={millify(globalStats.totalMarketCap)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Market Cap:"
-            value={(globalStats.totalMarketCap)}
+            value={millify(globalStats.totalMarketCap)}
           />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Markets" value={globalStats.totalMarkets} />
+          <Statistic title="Total Markets" value={millify(globalStats.totalMarkets)} />
         </Col>
       </Row>
       <div className="home-heading-container">
